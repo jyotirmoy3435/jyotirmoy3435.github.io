@@ -1,5 +1,6 @@
 body {
   background-color: #f2f1ed;
+  margin: 0; /* Remove default body margin */
 }
 
 .wrap {
@@ -22,7 +23,7 @@ a {
 }
 
 h1 {
-  margin-bottom: 10px;
+  margin-top: 10px;
   text-align: center;
   font: 300 2.25em "Lato";
   text-transform: uppercase;
