@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the countdown  
     init: function() {
       var Today = new Date(Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
-      var DeadLine = new Date('2024-01-21T17:20:00');
+      var DeadLine = new Date('2024-01-21T17:30:00');
     
       // Calculate the time difference in milliseconds
       var timeDiff = DeadLine - Today;
