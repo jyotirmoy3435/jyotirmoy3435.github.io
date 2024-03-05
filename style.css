@@ -1,5 +1,7 @@
 body {
   background: linear-gradient(45deg, #4CAF50, #2196F3);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -8,7 +10,8 @@ body {
 }
 
 .container {
-  width: 80%; /* Default width */
+  width: 80%;
+  /* Default width */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
@@ -20,7 +23,8 @@ body {
 
 @media only screen and (min-width: 768px) {
   .container {
-    width: 40%; /* Set width to 40% for wider screens */
+    width: 40%;
+    /* Set width to 40% for wider screens */
   }
 }
 
@@ -29,6 +33,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -36,12 +41,13 @@ body {
 }
 
 input[type="text"] {
-  width: calc(100% - 40px); /* 100% width minus padding */
+  width: calc(100% - 40px);
+  /* 100% width minus padding */
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(5px);
   text-align: center;
   font-size: 18px;
@@ -56,8 +62,10 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   font-size: 18px;
-  display: block; /* Ensure button is displayed as block element */
-  margin: auto; /* Center button horizontally */
+  display: block;
+  /* Ensure button is displayed as block element */
+  margin: auto;
+  /* Center button horizontally */
 }
 
 button:hover {
@@ -66,7 +74,19 @@ button:hover {
 
 #result {
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: left;
+  /* Left-align the results */
+  max-height: calc(50vh - 40px);
+  /* Adjusted based on the top and bottom margins */
+  overflow-y: auto;
+  /* Enable vertical scroll when content exceeds max height */
+  overflow-x: hidden;
+  /* Hide horizontal scroll */
+  scrollbar-width: 0;
+  /* Adjust the width of the scrollbar */
+  scrollbar-color: transparent transparent;
+  padding-left: 10px;
 }
 
 h3 {
@@ -78,20 +98,38 @@ h3 {
 ul {
   list-style: none;
   padding: 0;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   margin: auto;
 }
 
 li {
   margin-bottom: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding: 8px;
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease-in-out;
   font-size: 16px;
+  overflow-wrap: break-word;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  /* Ensure long words wrap instead of causing overflow */
+}
+
+
+/* Hide scrollbar */
+#result::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Firefox-specific adjustments */
+@-moz-document url-prefix() {
+  #result {
+    padding-left: -10px;
+    /* Adjusted for Firefox */
+  }
 }
 
 li:hover {
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.85);
 }
