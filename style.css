@@ -74,8 +74,6 @@ button:hover {
 }
 
 #result {
-  margin-top: 20px;
-  margin-bottom: 20px;
   text-align: left;
   /* Left-align the results */
   max-height: calc(50vh - 40px);
